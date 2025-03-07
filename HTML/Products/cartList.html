@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+        background-color: floralwhite;
+      }
+      .top {
+        color: salmon;
+        margin: 60px;
+        text-align: left;
+        font-size: 170%;
+      }
+      #line {
+        color: salmon;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+      }
+      #itmes {
+        justify-content: left;
+      }
+      .container {
+        flex-wrap: wrap;
+        gap: 30px;
+        box-sizing: border-box;
+        padding: 20px;
+        justify-content: left;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="top">장바구니</div>
+      <div id="line" style="width: 100%; height: 95%; border: 3px solid"></div>
+      <div class="container">
+        <span id="items">
+          <span>상품명: 라떼<br />가격: 10000<br />수량:2</span>상품명: 라떼
+          <img src="/Image/drink1.png" />
+        </span>
+        <br />
+        <span id="items">
+          <span>상품명: 라떼<br />가격: 10000<br />수량:1</span>
+          <img src="/Image/drink2.jpg" />
+        </span>
+      </div>
+    </header>
+  </body>
+</html>
