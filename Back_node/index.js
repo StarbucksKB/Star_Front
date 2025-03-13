@@ -14,6 +14,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('WELCOME');
 });
+
 app.get('/product', (req, res) => {
   //   res.send('아메리카노, 아이스아메리카노, 라테');
   const products = [
@@ -57,6 +58,7 @@ app.get('/product', (req, res) => {
   ];
   res.json(products);
 });
+
 app.get('/product/:prodNo', (req, res) => {
   // res.send(`${req.params.prodNo}상품의 상세내용입니다`);
   let product;
@@ -78,6 +80,61 @@ app.get('/product/:prodNo', (req, res) => {
     product = {};
   }
   res.json(product);
+});
+
+app.get('/cartList', (req, res) => {
+  const products = [
+    {
+      prodNo: 'C0001',
+      prodName: '크림베리라떼',
+      prodPrice: 4800,
+      img: '/Image/drink1.png',
+      prodNum: 1,
+    },
+    {
+      prodNo: 'C0002',
+      prodName: '따뜻한 카페라떼',
+      prodPrice: 1500,
+      img: '/Image/drink2.jpg',
+      prodNum: 1,
+    },
+    {
+      prodNo: 'C0003',
+      prodName: '라테',
+      prodPrice: 2000,
+      img: '/Image/drink3.jpg',
+      prodNum: 1,
+    },
+    {
+      prodNo: 'C0004',
+      prodName: '아이스라테',
+      prodPrice: 2000,
+      img: '/Image/drink4.jpg',
+      prodNum: 1,
+    },
+    {
+      prodNo: 'C0005',
+      prodName: '콜드브루몰트',
+      prodPrice: 2500,
+      img: '/Image/drink5.jpg',
+      prodNum: 1,
+    },
+    {
+      prodNo: 'C0006',
+      prodName: '카페브레베',
+      prodPrice: 3500,
+      img: '/Image/drink6.jpg',
+      prodNum: 1,
+    },
+    {
+      prodNo: 'C0007',
+      prodName: '바닐라라떼',
+      prodPrice: 3500,
+      img: '/Image/drink7.jpg',
+      prodNum: 1,
+    },
+  ];
+  res.json(products);
 });
 //Listen for connections.
 app.listen(port, () => {
