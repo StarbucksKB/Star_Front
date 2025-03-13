@@ -5,35 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      header {
-        background: floralwhite;
+      * {
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .header {
+        background-color: floralwhite;
+        width: 100%;
+        height: 7em;
+        position: fixed;
+      }
+
+      .section {
+        width: 100%;
+        height: 7em;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 2em;
+        flex: 1;
+        padding: 0 0 0 2em;
+        line-height: 5em;
+      }
+
+      .nav {
+        flex: 8;
+        color: salmon !important;
+        font-weight: bold;
+      }
+
+      .nav ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav ul li {
+        font-size: 1.4em;
+        margin: 0 1em;
+        line-height: 3em;
       }
     </style>
   </head>
   <body>
-    <header>
-      <!-- HEAD -->
-      <div class="logo">
-        <img src="/Image/starbucks.png" width="85" height="80" />
+    <div class="header">
+      <div class="section">
+        <div class="logo">
+          <img src="/Image/starbucks.png" /><a href="#"></a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li>음료</li>
+            <li>장바구니</li>
+            <li>주문목록</li>
+            <li>로그인</li>
+            <li>로그아웃</li>
+            <li>가입</li>
+          </ul>
+        </div>
       </div>
-      <nav>
-        <ul class="menu">
-          <li class="products"><a href="#">음료</a></li>
-          <li class="cart"><a href="#">장바구니</a></li>
-          <li class="orders"><a href="#">주문목록</a></li>
-          <li><a href="#">로그인</a></li>
-          <li><a href="#">로그아웃</a></li>
-          <li><a href="#">가입</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section>
-      <article>
-        내용
-        <div id="map" style="width: 100%; height: 95%; border: 1px solid"></div>
-      </article>
-      <aside>광고</aside>
-    </section>
-    <footer>FOOT</footer>
+    </div>
   </body>
 </html>
