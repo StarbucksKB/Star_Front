@@ -4,6 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
+    <script>
+      window.addEventListener('load', () => {
+        // 아이디와 비밀번호를 가지고 와서 DB의 아이디 비밀번호와
+        // 비교하고 맞다면 login 틀리다면 비밀번호가 틀렸거나 없는 아이디입니다 호출
+        const id = document.querySelector('.id');
+        const pw = document.querySelector('.pw');
+        const bt = document.querySelector('.button');
+        const cb = document.querySelector('#check');
+        console.log(window.location.pathname);
+
+        bt.addEventListener('click', () => {
+          if (pw.value == 3) {
+            //버튼이 눌렸을 때 아이디와 비밀번호가 없는 아이디 일 때
+            alert('비밀번호가 틀렸거나 없는 아이디입니다.');
+            pw.value = '';
+          } else {
+            // cb.addEventListener('change', () => {
+            //   // 체크 되었다면 다음 로그인 할 때
+            //   // 아이디 value default 값으로 입력한 id value를 채워 넣는다.
+            // });
+            // 그 후 다시 main.html로 돌아간다
+            alert('로그인 되었습니다.');
+            window.location.href = '../main.html';
+          }
+        });
+      });
+    </script>
     <style>
       .name {
         text-align: center;
@@ -36,20 +63,20 @@
         <legend><h1>로그인</h1></legend>
         <table>
           <tr>
-            <td class="name" id="id">아이디</td>
+            <td>아이디</td>
             <td>:</td>
-            <td><input type="text" /></td>
+            <td><input class="id" type="text" /></td>
           </tr>
           <tr>
-            <td class="name">비밀번호</td>
+            <td>비밀번호</td>
             <td>:</td>
-            <td><input type="password" /></td>
+            <td><input class="pw" type="password" /></td>
           </tr>
         </table>
         <br />
-        <div class="button">
+        <div>
           <input type="checkbox" id="check" /> 아이디 저장
-          <button type="submit">로그인</button>
+          <button class="button">로그인</button>
         </div>
       </fieldset>
     </form>
