@@ -18,14 +18,26 @@
       #line {
         color: salmon;
       }
+      .lines {
+        color: salmon;
+        background-color: salmon;
+        width: 100%;
+        height: 3px;
+        margin: 10px 0;
+        display: block;
+      }
       img {
         width: 150px;
         height: 150px;
       }
-      #items {
+      .items {
         justify-content: space-evenly;
         display: inline-flex;
         flex-direction: row;
+      }
+      .text {
+        display: inline-flex;
+        flex-direction: column;
       }
       .container {
         display: flex;
@@ -37,28 +49,65 @@
         justify-content: left;
       }
     </style>
+    <script>
+      fetch('http://localhost:3000/cartList')
+        .then((response) => response.json())
+        .then((products) => {
+          const container = document.querySelector('.container');
+
+          products.forEach((product, index) => {
+            const itemDiv = document.createElement('span');
+            itemDiv.classList.add('items');
+            itemDiv.id = `items${index + 1}`;
+
+            itemDiv.innerHTML = `
+            
+            <img src="${product.img}" />
+          <span class="text">
+            <span class="prodName">상품명: ${product.prodName}</span>
+            <span class="prodPrice">가격: ${product.prodPrice}</span>
+            <span class="prodNum">수량: ${product.prodNum}</span>
+          </span>
+          `;
+
+            container.appendChild(itemDiv);
+
+            const lineDiv = document.createElement('div');
+            lineDiv.classList.add('lines');
+            container.appendChild(lineDiv);
+          });
+        });
+    </script>
   </head>
   <body>
     <header>
       <div class="top">장바구니</div>
       <div id="line" style="width: 100%; height: 95%; border: 3px solid"></div>
       <div class="container">
-        <span id="items">
+        <!-- <span class="items" id="items1">
           <img src="/Image/drink1.png" /><br />
-          <span>상품명: 라떼<br />가격: 10000<br />수량:2<br /></span>
+          <span class="text">
+            <span class="prodName">상품명: 아메리카노</span>
+            <span class="prodPrice">가격: 1500</span>
+            <span class="prodNum">수량: 1</span>
+          </span>
         </span>
         <div
           id="line"
           style="width: 100%; height: 95%; border: 3px solid"
         ></div>
-        <span id="items">
+        <span class="items" id="items2">
           <img src="/Image/drink2.jpg" /><br />
-          <span>상품명: 라떼<br />가격: 10000<br />수량:1<br /></span>
+          <span class="text">
+            <span class="prodName">상품명:라떼 </span>
+            <span class="prodPrice">가격: 1500</span>
+            <span class="prodNum">수량: 1</span>
+          </span>
         </span>
         <div
           id="line"
           style="width: 100%; height: 95%; border: 3px solid"
-        ></div>
+        ></div> -->
       </div>
     </header>
   </body>
