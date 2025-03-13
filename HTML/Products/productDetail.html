@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>productdetail</title>
+    <style>
+      body {
+        padding: 10px;
+        background-color: floralwhite;
+      }
+
+      section {
+        margin-top: 50px;
+      }
+
+      #right {
+        float: left;
+      }
+      img {
+        width: 400px;
+      }
+
+      #left {
+        margin-left: 450px;
+      }
+      hr.line-first {
+        border: none; /* 기본 테두리 제거 */
+        height: 2px; /* 선의 두께 조정 */
+        background-color: salmon; /* 선 색상 변경 */
+        margin: 20px 0; /* 위아래 여백 조정 */
+      }
+
+      hr.line-second {
+        border: none; /* 기본 테두리 제거 */
+        height: 1px; /* 선의 두께 조정 */
+        background-color: salmon; /* 선 색상 변경 */
+        margin: 20px 0; /* 위아래 여백 조정 */
+      }
+
+      #nutrtion-largeset {
+        margin: 20px 0px;
+      }
+      .nutrition-set {
+        overflow: hidden;
+      }
+      .nutrition-block-left {
+        float: left;
+      }
+
+      .nutrition-block-right {
+        float: right;
+      }
+
+      #allergy {
+        margin: 0px 0px 23px;
+        padding: 13px 10px;
+        background-color: floralwhite;
+      }
+
+      #cart-button {
+        background-color: floralwhite;
+        border: 1px solid salmon;
+        border-radius: 3px;
+      }
+      #cart-button:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">콜드 브루</h1>
+    </header>
+
+    <section>
+      <div id="right">
+        <img src="/Image/drink1.png" alt="콜드 브루 이미지" />
+      </div>
+
+      <div id="left">
+        <div id="subtitle">
+          <h4>
+            나이트로 바닐라 크림
+            <br />
+            <span> Nitro Vanilla Cream</span>
+          </h4>
+
+          <hr class="line-first" />
+
+          <p>
+            부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
+            느껴보세요!
+          </p>
+        </div>
+
+        <hr class="line-second" />
+
+        <div id="nutrition">
+          <div id="nutrition-info">
+            <p>
+              제품 영양 정보 <br />
+              Tall(톨) / 355ml
+            </p>
+          </div>
+
+          <hr class="line-second" />
+
+          <div id="nutrtion-largeset">
+            <div class="nutrition-set">
+              <div class="nutrition-block-left">1회 제공량 (kcal)</div>
+              <div class="nutrition-block-right">80</div>
+            </div>
+
+            <div class="nutrition-set">
+              <div class="nutrition-block-left">포화지방 (g)</div>
+              <div class="nutrition-block-right">2</div>
+            </div>
+
+            <div class="nutrition-set">
+              <div class="nutrition-block-left">단백질 (g)</div>
+              <div class="nutrition-block-right">1</div>
+            </div>
+
+            <div class="nutrition-set">
+              <div class="nutrition-block-left">나트륨 (mg)</div>
+              <div class="nutrition-block-right">40</div>
+            </div>
+
+            <div class="nutrition-set">
+              <div class="nutrition-block-left">당류 (g)</div>
+              <div class="nutrition-block-right">10</div>
+            </div>
+
+            <div class="nutrition-set">
+              <div class="nutrition-block-left">카페인 (mg)</div>
+              <div class="nutrition-block-right">232</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="allergy">알레르기 유발요인 : 우유</div>
+
+        <label for="count"> 수량 : <input type="number" id="count" /></label>
+        <input type="button" value="장바구니담기" id="cart-button" />
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
+        느껴보세요!
+      </p>
+
+      <hr class="line-second" />
+    </footer>
+  </body>
+</html>
