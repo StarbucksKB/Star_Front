@@ -20,40 +20,45 @@ app.get('/product', (req, res) => {
   const products = [
     {
       prodNo: 'C0001',
-      prodName: '아메리카노',
+      prodName: '나이트로 바닐라 크림 라떼',
       prodPrice: 1500,
-      img: 'C0001.jpg',
+      img: '/Image/drink1.png',
     },
     {
       prodNo: 'C0002',
-      prodName: '아이스아메리카노',
+      prodName: '리저브 HOT라떼',
       prodPrice: 1500,
-      img: 'C0002.jpg',
+      img: '/Image/drink2.jpg',
     },
-    { prodNo: 'C0003', prodName: '라테', prodPrice: 2000, img: 'C0003.jpg' },
+    {
+      prodNo: 'C0003',
+      prodName: 'HOT아메리카노',
+      prodPrice: 2000,
+      img: '/Image/drink3.jpg',
+    },
     {
       prodNo: 'C0004',
-      prodName: '아이스라테',
+      prodName: 'HOT카페 라테',
       prodPrice: 2000,
-      img: 'C0004.jpg',
+      img: '/Image/drink4.jpg',
     },
     {
       prodNo: 'C0005',
       prodName: '콜드브루몰트',
       prodPrice: 2500,
-      img: 'C0005.jpg',
+      img: '/Image/drink5.jpg',
     },
     {
       prodNo: 'C0006',
       prodName: '카페브레베',
       prodPrice: 3500,
-      img: 'C0006.jpg',
+      img: '/Image/drink6.jpg',
     },
     {
       prodNo: 'C0007',
       prodName: '바닐라라떼',
       prodPrice: 3500,
-      img: 'C0007.jpg',
+      img: '/Image/drink7.jpg',
     },
   ];
   res.json(products);
