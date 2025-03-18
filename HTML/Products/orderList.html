@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background-color: floralwhite;
-        }
         .table{
             display:table;
             width:100%;
-            color: salmon;
+            color : salmon; 
         }
         .tableHead{
             display:table-row;
@@ -29,16 +26,14 @@
             padding-right:2em;
             border-bottom:solid;
             border-bottom-width:thin;
-        }
-        h2{
-            color: salmon;
+
         }
         
     </style>
 </head>
 <body>
-    <h2> 주문목록 </h2>
-    <div class="table">
+    <h2 style="color : salmon"> 주문목록 </h2>
+    <div class="table" id="tableContainer">
         <div class="tableHead">
             <div class="cell">
                 <p>주문번호</p>
@@ -59,86 +54,34 @@
                 <p>주문수량</p>
             </div>           
         </div>
-        <div class="tableRow">
-            <div class="cell">
-                <p>97</p>
-            </div>
-            <div class="cell">
-                <p>2025-03-07</p>
-            </div>
-            <div class="cell">
-                <p>C0001</p>
-            </div>
-            <div class="cell">
-                <p>아메리카노</p>
-            </div>
-            <div class="cell">
-                <p>1000</p>
-            </div>
-            <div class="cell">
-                <p>1</p>
-            </div>           
+       
         </div>
-        <div class="tableRow">
-            <div class="cell">
-                <p>97</p>
-            </div>
-            <div class="cell">
-                <p>2025-03-07</p>
-            </div>
-            <div class="cell">
-                <p>C0002</p>
-            </div>
-            <div class="cell">
-                <p>라떼</p>
-            </div>
-            <div class="cell">
-                <p>1000</p>
-            </div>
-            <div class="cell">
-                <p>1</p>
-            </div>           
-        </div>
-        <div class="tableRow">
-            <div class="cell">
-                <p>46</p>
-            </div>
-            <div class="cell">
-                <p>2025-03-05</p>
-            </div>
-            <div class="cell">
-                <p>C0001</p>
-            </div>
-            <div class="cell">
-                <p>아메리카노</p>
-            </div>
-            <div class="cell">
-                <p>1000</p>
-            </div>
-            <div class="cell">
-                <p>1</p>
-            </div>           
-        </div>
-        <div class="tableRow">
-            <div class="cell">
-                <p>12</p>
-            </div>
-            <div class="cell">
-                <p>2025-03-01</p>
-            </div>
-            <div class="cell">
-                <p>C0002</p>
-            </div>
-            <div class="cell">
-                <p>라떼</p>
-            </div>
-            <div class="cell">
-                <p>1000</p>
-            </div>
-            <div class="cell">
-                <p>1</p>
-            </div>           
-        </div>
+    </div>
 </div>
+<script>
+     fetch("http://localhost:3000/orderList").then(res => res.json()).then(data => {
+            console.log(data)
+
+            const container = document.getElementById('tableContainer');
+
+
+            data.forEach(item => {
+            container.innerHTML += `
+            <div class="tableRow">
+            <div class="cell"><p>${item.orderNo}</p></div>
+            <div class="cell"><p>${item.orderDate}</p></div>
+            <div class="cell"><p>${item.prodNo}</p></div>
+            <div class="cell"><p>${item.prodName}</p></div>
+            <div class="cell"><p>${item.prodPrice}</p></div>
+            <div class="cell"><p>${item.quantity || 1}</p></div>
+            </div>`;
+        });
+  })
+  .catch(err => {
+    console.error("Error fetching data:", err);
+
+        })
+</script>
     
 </html>
+
