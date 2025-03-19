@@ -5,31 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>main</title>
     <script>
-      window.addEventListener('load', function () {
-        const productList = document.querySelector('.productList');
-        const orderList = document.querySelector('.orderList');
-        const cartList = document.querySelector('.cartList');
-        const login = document.querySelector('.login');
-        const join = document.querySelector('.join');
-        const logout = document.querySelector('.logout');
+      window.addEventListener("load", function () {
+        const productList = document.querySelector(".productList");
+        const orderList = document.querySelector(".orderList");
+        const cartList = document.querySelector(".cartList");
+        const login = document.querySelector(".login");
+        const join = document.querySelector(".join");
+        const logout = document.querySelector(".logout");
 
         // 각 클래스로 가져온 다음 window.location.href를 사용하여 각 폴더에 해당하는 홈페이지로 이동
-        productList.addEventListener('click', (event) => {
-          window.location.href = './Products/productList.html';
+        productList.addEventListener("click", (event) => {
+          window.location.href = "./Products/productList.html";
         });
-        orderList.addEventListener('click', (event) => {
-          window.location.href = './Products/orderList.html';
+        orderList.addEventListener("click", (event) => {
+          window.location.href = "./Products/orderList.html";
         });
-        cartList.addEventListener('click', (event) => {
-          window.location.href = './Products/cartList.html';
+        cartList.addEventListener("click", (event) => {
+          window.location.href = "./Products/cartList.html";
         });
-        login.addEventListener('click', (event) => {
-          window.location.href = './Members/login.html';
+        login.addEventListener("click", (event) => {
+          window.location.href = "./Members/login.html";
         });
-        join.addEventListener('click', (event) => {
-          window.location.href = './Members/join.html';
+        join.addEventListener("click", (event) => {
+          window.location.href = "./Members/join.html";
         });
-        logout.addEventListener('click', () => alert('로그아웃 되셨습니다.'));
+        logout.addEventListener("click", () => alert("로그아웃 되셨습니다."));
       });
     </script>
     <style>
@@ -42,11 +42,19 @@
         list-style: none;
       }
 
+      body {
+        margin: 0;
+        padding-top: 7em;
+      }
+
       .header {
         background-color: floralwhite;
         width: 100%;
         height: 7em;
         position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
       }
 
       .section {
@@ -85,6 +93,19 @@
         margin: 0 1em;
         line-height: 3em;
       }
+
+      .backgroundImg {
+  width: 100%;
+  height: 430px; 
+  overflow: hidden; 
+}
+
+#backgroundImg {
+  width: 100%;      
+  height: 100%;      
+  object-fit: cover; 
+}
+
     </style>
   </head>
   <body>
@@ -104,6 +125,9 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div class="backgroundImg">
+      <img src="/Image/starbackground.png" id="backgroundImg" /></a>
     </div>
   </body>
 </html>
