@@ -87,6 +87,36 @@ app.get('/product/:prodNo', (req, res) => {
   res.json(product);
 });
 
+app.get('/orderList', (req, res) => {
+  const orders = [
+    {
+      orderNo: 'ORD001',
+      orderDate: '2024-03-18',
+      prodNo: 'C0001',
+      prodName: '아메리카노',
+      prodPrice: 1500,
+      quantity: 2,
+    },
+    {
+      orderNo: 'ORD002',
+      orderDate: '2024-03-18',
+      prodNo: 'C0002',
+      prodName: '아이스아메리카노',
+      prodPrice: 1500,
+      quantity: 1,
+    },
+    {
+      orderNo: 'ORD003',
+      orderDate: '2024-03-19',
+      prodNo: 'C0003',
+      prodName: '라떼',
+      prodPrice: 2000,
+      quantity: 3,
+    },
+  ];
+  res.json(orders);
+});
+
 app.get('/cartList', (req, res) => {
   const products = [
     {

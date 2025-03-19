@@ -44,8 +44,24 @@
         clear: both;
       }
     </style>
+    <script>
+      function loadHeader() {
+        fetch('/HTML/header.html')
+          .then((response) => response.text())
+          .then((data) => {
+            document.querySelector('.headtop').innerHTML = data;
+          })
+          .then(() => {
+            let script = document.createElement('script');
+            script.src = '/HTML/header.js';
+            document.body.appendChild(script);
+          });
+      }
+      window.addEventListener('load', loadHeader);
+    </script>
   </head>
   <body>
+    <top class="headtop"></top>
     <header>
       <div class="top">음료 목록입니다.</div>
     </header>
