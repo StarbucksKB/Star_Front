@@ -22,6 +22,10 @@ body {
   z-index: 100;
 }
 
+#headerLine {
+  color: rgb(241, 233, 213);
+}
+
 .section {
   width: 100%;
   max-width: 1200px;
