@@ -1,181 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>main</title>
-    <script>
-      window.addEventListener("load", function () {
-        const productList = document.querySelector(".productList");
-        const orderList = document.querySelector(".orderList");
-        const cartList = document.querySelector(".cartList");
-        const login = document.querySelector(".login");
-        const join = document.querySelector(".join");
-        const logout = document.querySelector(".logout");
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/HTML/header.html")
+    .then((res) => res.text())
+    .then((headerHTML) => {
+      document.getElementById("header").innerHTML = headerHTML;
 
-        productList.addEventListener("click", (event) => {
-          window.location.href = "./Products/productList.html";
-        });
-        orderList.addEventListener("click", (event) => {
-          window.location.href = "./Products/orderList.html";
-        });
-        cartList.addEventListener("click", (event) => {
-          window.location.href = "./Products/cartList.html";
-        });
-        login.addEventListener("click", (event) => {
-          window.location.href = "./Members/login.html";
-        });
-        join.addEventListener("click", (event) => {
-          window.location.href = "./Members/join.html";
-        });
-        logout.addEventListener("click", () => alert("로그아웃 되셨습니다."));
-      });
-    </script>
-    <style>
-      * {
-        text-decoration: none;
-        box-sizing: border-box;
-      }
-
-      li {
-        list-style: none;
-      }
-
-      body {
-        margin: 0;
-        padding-top: 5em;
-      }
-
-      .header {
-        background-color: floralwhite;
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-      }
-
-      .section {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 5em;
-        padding: 0 1em;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        flex: 1;
-      }
-
-      #imagelogo {
-        width: 60px;
-        height: auto;
-      }
-
-      .nav {
-        flex: 3;
-      }
-
-      .nav ul {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-      }
-
-      .nav ul li {
-        font-size: 1, 2em;
-        margin: 0 0.6em;
-        cursor: pointer;
-        color: salmon;
-        font-weight: bold;
-        white-space: nowrap;
-      }
-
-      .backgroundImg {
-        width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-        text-align: center;
-      }
-
-      #backgroundImg {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        display: inline-block;
-      }
-
-      @media screen and (max-width: 768px) {
-        .section {
-          flex-direction: column;
-          height: auto;
-          padding: 0.5em;
-        }
-
-        .logo {
-          margin-bottom: 0.3em;
-          justify-content: center;
-        }
-
-        #imagelogo {
-          width: 50px;
-        }
-
-        .nav ul {
-          flex-direction: column;
-        }
-
-        .nav ul li {
-          font-size: 0.9em;
-          margin: 0.2em 0;
-        }
-
-        body {
-          padding-top: 9em;
-        }
-
-        .backgroundImg {
-          margin-top: 0.5em;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="header">
-      <div class="section">
-        <div class="logo">
-          <a href="#"
-            ><img src="/Image/starbucks.png" id="imagelogo" alt="logo"
-          /></a>
-        </div>
-        <nav class="nav">
-          <ul>
-            <li class="productList">음료</li>
-            <li class="cartList">장바구니</li>
-            <li class="orderList">주문목록</li>
-            <li class="login">로그인</li>
-            <li class="join">가입</li>
-            <li class="logout">로그아웃</li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-    <div class="backgroundImg">
-      <img
-        src="/Image/starbackground.png"
-        id="backgroundImg"
-        alt="background"
-      />
-    </div>
-  </body>
-</html>
+      document.querySelector(".productList").onclick = () => {
+        location.href = "/HTML/Products/productList.html";
+      };
+      document.querySelector(".cartList").onclick = () => {
+        location.href = "/HTML/Products/cartList.html";
+      };
+      document.querySelector(".orderList").onclick = () => {
+        location.href = "/HTML/Products/orderList.html";
+      };
+      document.querySelector(".login").onclick = () => {
+        location.href = "/HTML/Members/login.html";
+      };
+      document.querySelector(".join").onclick = () => {
+        location.href = "/HTML/Members/join.html";
+      };
+      document.querySelector(".logout").onclick = () => {
+        alert("로그아웃 되셨습니다.");
+      };
+    })
+    .catch((err) => console.error("헤더 로딩 중 오류 발생:", err));
+});
