@@ -4,14 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>productList</title>
-    <script>
-      window.addEventListener('load', () => {
-        let img1 = document.querySelector('img');
-        img1.addEventListener('click', () => {
-          window.location.href = 'productDetail.html';
-        });
-      });
-    </script>
+    <link rel="stylesheet" href="/HTML/CSS/style.css" />
     <style>
       body {
         background-color: floralwhite;
@@ -46,6 +39,7 @@
     </style>
   </head>
   <body>
+    <top id="header"></top>
     <header>
       <div class="top">음료 목록입니다.</div>
     </header>
@@ -82,5 +76,14 @@
       <div class="clear"></div>
       <div class="bottombar"></div>
     </div>
+    <script src="/HTML/header.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        let img1 = document.querySelector('img');
+        img1.addEventListener('click', () => {
+          window.location.href = 'productDetail.html';
+        });
+      });
+    </script>
   </body>
 </html>

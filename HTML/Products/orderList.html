@@ -32,7 +32,7 @@
   <body>
     <div id="header"></div>
 
-    <h2 style="color: salmon">주문목록</h2>
+    <h2 style="color: salmon; text-align: center">주문목록</h2>
     <div class="table" id="tableContainer">
       <div class="tableHead">
         <div class="cell"><p>주문번호</p></div>
@@ -46,10 +46,10 @@
 
     <script src="/HTML/header.js"></script>
     <script>
-      fetch("http://localhost:3000/orderList")
+      fetch('http://localhost:3000/orderList')
         .then((res) => res.json())
         .then((data) => {
-          const container = document.getElementById("tableContainer");
+          const container = document.getElementById('tableContainer');
           data.forEach((item) => {
             container.innerHTML += `
               <div class="tableRow">
@@ -62,7 +62,7 @@
               </div>`;
           });
         })
-        .catch((err) => console.error("Error fetching data:", err));
+        .catch((err) => console.error('Error fetching data:', err));
     </script>
   </body>
 </html>

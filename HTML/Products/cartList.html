@@ -60,14 +60,14 @@
       }
     </style>
     <script>
-      fetch("http://localhost:3000/cartList")
+      fetch('http://localhost:3000/cartList')
         .then((response) => response.json())
         .then((products) => {
-          const container = document.querySelector(".container");
+          const container = document.querySelector('.container');
 
           products.forEach((product, index) => {
-            const itemDiv = document.createElement("span");
-            itemDiv.classList.add("items");
+            const itemDiv = document.createElement('span');
+            itemDiv.classList.add('items');
             itemDiv.id = `items${index + 1}`;
 
             itemDiv.innerHTML = `
@@ -82,21 +82,21 @@
 
             container.appendChild(itemDiv);
 
-            const lineDiv = document.createElement("div");
-            lineDiv.classList.add("lines");
+            const lineDiv = document.createElement('div');
+            lineDiv.classList.add('lines');
             container.appendChild(lineDiv);
           });
         });
-
-      function loadHeader() {
-        fetch('/HTML/header.html')
-          .then((response) => response.text())
-          .then((data) => {
-            document.querySelector('.top').innerHTML = data;
-          });
-      }
-      window.addEventListener('load', loadHeader);
+      // function loadHeader() {
+      //   fetch('/HTML/header.html')
+      //     .then((response) => response.text())
+      //     .then((data) => {
+      //       document.querySelector('.top').innerHTML = data;
+      //     });
+      // }
+      // window.addEventListener('load', loadHeader);
     </script>
+    <script src="/HTML/header.js"></script>
   </head>
   <body>
     <div id="header"></div>

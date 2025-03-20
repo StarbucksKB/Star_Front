@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>main</title>
     <script>
-      window.addEventListener("load", function () {
-        const productList = document.querySelector(".productList");
-        const orderList = document.querySelector(".orderList");
-        const cartList = document.querySelector(".cartList");
-        const login = document.querySelector(".login");
-        const join = document.querySelector(".join");
-        const logout = document.querySelector(".logout");
+      window.addEventListener('load', function () {
+        const productList = document.querySelector('.productList');
+        const orderList = document.querySelector('.orderList');
+        const cartList = document.querySelector('.cartList');
+        const login = document.querySelector('.login');
+        const join = document.querySelector('.join');
+        const logout = document.querySelector('.logout');
 
-        productList.addEventListener("click", (event) => {
-          window.location.href = "./Products/productList.html";
+        productList.addEventListener('click', (event) => {
+          window.location.href = './Products/productList.html';
         });
-        orderList.addEventListener("click", (event) => {
-          window.location.href = "./Products/orderList.html";
+        orderList.addEventListener('click', (event) => {
+          window.location.href = './Products/orderList.html';
         });
-        cartList.addEventListener("click", (event) => {
-          window.location.href = "./Products/cartList.html";
+        cartList.addEventListener('click', (event) => {
+          window.location.href = './Products/cartList.html';
         });
-        login.addEventListener("click", (event) => {
-          window.location.href = "./Members/login.html";
+        login.addEventListener('click', (event) => {
+          window.location.href = './Members/login.html';
         });
-        join.addEventListener("click", (event) => {
-          window.location.href = "./Members/join.html";
+        join.addEventListener('click', (event) => {
+          window.location.href = './Members/join.html';
         });
-        logout.addEventListener("click", () => alert("로그아웃 되셨습니다."));
+        logout.addEventListener('click', () => alert('로그아웃 되셨습니다.'));
       });
     </script>
     <style>
