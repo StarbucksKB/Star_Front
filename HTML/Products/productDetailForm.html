@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>productdetail</title>
-    <link rel="stylesheet" href="/HTML/CSS/style.css" />
+    <title>productDetail</title>
     <style>
       body {
         padding: 10px;
@@ -69,7 +68,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="productDetail">
     <header>
       <h1 id="title">나이트로 바닐라 크림 라떼</h1>
     </header>
@@ -82,16 +81,16 @@
       <div id="left">
         <div id="subtitle">
           <h4>
-            나이트로 바닐라 크림 라떼
+            subtitle
             <br />
-            <span> Nitro Vanilla Cream</span>
+            <span> ENG subtitle</span>
           </h4>
 
           <hr class="line-first" />
 
           <p>
             부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
-            느껴보세요!
+            느껴보세요! COMMENT
           </p>
         </div>
 
@@ -110,32 +109,32 @@
           <div id="nutrtion-largeset">
             <div class="nutrition-set">
               <div class="nutrition-block-left">1회 제공량 (kcal)</div>
-              <div class="nutrition-block-right">80</div>
+              <div class="nutrition-block-right">해당 제품 칼로리</div>
             </div>
 
             <div class="nutrition-set">
               <div class="nutrition-block-left">포화지방 (g)</div>
-              <div class="nutrition-block-right">2</div>
+              <div class="nutrition-block-right">해당 제품 포화지방</div>
             </div>
 
             <div class="nutrition-set">
               <div class="nutrition-block-left">단백질 (g)</div>
-              <div class="nutrition-block-right">1</div>
+              <div class="nutrition-block-right">해당 제품 단백질</div>
             </div>
 
             <div class="nutrition-set">
               <div class="nutrition-block-left">나트륨 (mg)</div>
-              <div class="nutrition-block-right">40</div>
+              <div class="nutrition-block-right">해당 제품 나트륨</div>
             </div>
 
             <div class="nutrition-set">
               <div class="nutrition-block-left">당류 (g)</div>
-              <div class="nutrition-block-right">10</div>
+              <div class="nutrition-block-right">해당 제품 당류</div>
             </div>
 
             <div class="nutrition-set">
               <div class="nutrition-block-left">카페인 (mg)</div>
-              <div class="nutrition-block-right">232</div>
+              <div class="nutrition-block-right">해당 제품 카페인</div>
             </div>
           </div>
         </div>
@@ -158,4 +157,14 @@
       <hr class="line-second" />
     </footer>
   </body>
+  <script type="text/javascript" src="https://unpkg.com/vue"></script>
+  <script>
+    Vuecreate.App({
+      data() {
+        return {
+          productDetail: [],
+        };
+      },
+    }).mount();
+  </script>
 </html>
