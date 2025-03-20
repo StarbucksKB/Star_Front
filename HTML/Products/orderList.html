@@ -1,87 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>orderList</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주문목록</title>
+    <link rel="stylesheet" href="/HTML/CSS/style.css" />
     <style>
-        .table{
-            display:table;
-            width:100%;
-            color : salmon; 
-        }
-        .tableHead{
-            display:table-row;
-            font-weight:bold;
-            text-align:center;
-        }
-        .tableRow{
-            display:table-row;
-            font-weight:bold;
-            text-align:center;
-        }
-        .cell{
-            display:table-cell;
-            padding-left:2em;
-            padding-right:2em;
-            border-bottom:solid;
-            border-bottom-width:thin;
-
-        }
-        
+      body {
+        background-color: floralwhite;
+      }
+      .table {
+        display: table;
+        width: 100%;
+        color: salmon;
+        margin-top: 2em;
+      }
+      .tableHead,
+      .tableRow {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+      }
+      .cell {
+        display: table-cell;
+        padding-left: 2em;
+        padding-right: 2em;
+        border-bottom: solid thin;
+      }
     </style>
-</head>
-<body>
-    <h2 style="color : salmon"> 주문목록 </h2>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <h2 style="color: salmon">주문목록</h2>
     <div class="table" id="tableContainer">
-        <div class="tableHead">
-            <div class="cell">
-                <p>주문번호</p>
-            </div>
-            <div class="cell">
-                <p>주문일자</p>
-            </div>
-            <div class="cell">
-                <p>상품번호</p>
-            </div>
-            <div class="cell">
-                <p>상품명</p>
-            </div>
-            <div class="cell">
-                <p>가격</p>
-            </div>
-            <div class="cell">
-                <p>주문수량</p>
-            </div>           
-        </div>
-       
-        </div>
+      <div class="tableHead">
+        <div class="cell"><p>주문번호</p></div>
+        <div class="cell"><p>주문일자</p></div>
+        <div class="cell"><p>상품번호</p></div>
+        <div class="cell"><p>상품명</p></div>
+        <div class="cell"><p>가격</p></div>
+        <div class="cell"><p>주문수량</p></div>
+      </div>
     </div>
-</div>
-<script>
-     fetch("http://localhost:3000/orderList").then(res => res.json()).then(data => {
-            console.log(data)
 
-            const container = document.getElementById('tableContainer');
-
-
-            data.forEach(item => {
+    <script src="/HTML/header.js"></script>
+    <script>
+      fetch("http://localhost:3000/orderList")
+        .then((res) => res.json())
+        .then((data) => {
+          const container = document.getElementById("tableContainer");
+          data.forEach((item) => {
             container.innerHTML += `
-            <div class="tableRow">
-            <div class="cell"><p>${item.orderNo}</p></div>
-            <div class="cell"><p>${item.orderDate}</p></div>
-            <div class="cell"><p>${item.prodNo}</p></div>
-            <div class="cell"><p>${item.prodName}</p></div>
-            <div class="cell"><p>${item.prodPrice}</p></div>
-            <div class="cell"><p>${item.quantity || 1}</p></div>
-            </div>`;
-        });
-  })
-  .catch(err => {
-    console.error("Error fetching data:", err);
-
+              <div class="tableRow">
+                <div class="cell"><p>${item.orderNo}</p></div>
+                <div class="cell"><p>${item.orderDate}</p></div>
+                <div class="cell"><p>${item.prodNo}</p></div>
+                <div class="cell"><p>${item.prodName}</p></div>
+                <div class="cell"><p>${item.prodPrice}</p></div>
+                <div class="cell"><p>${item.quantity || 1}</p></div>
+              </div>`;
+          });
         })
-</script>
-    
+        .catch((err) => console.error("Error fetching data:", err));
+    </script>
+  </body>
 </html>
-

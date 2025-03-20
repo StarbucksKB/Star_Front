@@ -1,156 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>main</title>
-    <script>
-      window.addEventListener("load", function () {
-        const productList = document.querySelector(".productList");
-        const orderList = document.querySelector(".orderList");
-        const cartList = document.querySelector(".cartList");
-        const login = document.querySelector(".login");
-        const join = document.querySelector(".join");
-        const logout = document.querySelector(".logout");
-        // 각 클래스로 가져온 다음 window.location.href를 사용하여 각 폴더에 해당하는 홈페이지로 이동
-        productList.addEventListener("click", (event) => {
-          window.location.href = "./Products/productList.html";
-        });
-        orderList.addEventListener("click", (event) => {
-          window.location.href = "./Products/orderList.html";
-        });
-        cartList.addEventListener("click", (event) => {
-          window.location.href = "./Products/cartList.html";
-        });
-        login.addEventListener("click", (event) => {
-          window.location.href = "./Members/login.html";
-        });
-        join.addEventListener("click", (event) => {
-          window.location.href = "./Members/join.html";
-        });
-        logout.addEventListener("click", () => alert("로그아웃 되셨습니다."));
-      });
-    </script>
-   <style>
-    * {
-      text-decoration: none;
-      box-sizing: border-box;
-    }
-    li {
-      list-style: none;
-    }
-    body {
-      margin: 0;
-      padding-top: 7em;
-    }
-    .header {
-      background-color: floralwhite;
-      width: 100%;
-      height: auto;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      border-bottom: 1px solid #ddd;
-    }
-    .section {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 7em;
-      padding: 0 1em;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      flex: 1;
-    }
-    #imagelogo {
-      width: 80px;
-      height: auto;
-    }
-    .nav {
-      flex: 3;
-    }
-    .nav ul {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-    }
-    .nav ul li {
-      font-size: 1.2em;
-      margin: 0 0.8em;
-      cursor: pointer;
-      color: salmon;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    /* 모바일 대응을 위한 미디어쿼리 추가 */
-    @media screen and (max-width: 768px) {
-      .section {
-        flex-direction: column;
-        height: auto;
-        padding: 1em 0.5em;
-      }
-      .logo {
-        margin-bottom: 0.5em;
-        justify-content: center;
-      }
-      #imagelogo {
-        width: 60px;
-        height: auto;
-      }
-      .nav ul {
-        flex-direction: column;
-      }
-      .nav ul li {
-        font-size: 1em;
-        margin: 0.2em 0;
-      }
-      body {
-        padding-top: 11em;
-      }
-      .header {
-        height: auto;
-      }
-      .section {
-        flex-direction: column;
-        height: auto;
-      }
-    }
-      .backgroundImg {
-  width: 100%;
-  height: 430px;
-  overflow: hidden;
-}
-#backgroundImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <div class="section">
-        <div class="logo">
-          <a href="#"><img src="/Image/starbucks.png" id="imagelogo" alt="logo" /></a>
-        </div>
-        <nav class="nav">
-          <ul>
-            <li class="productList">음료</li>
-            <li class="cartList">장바구니</li>
-            <li class="orderList">주문목록</li>
-            <li class="login">로그인</li>
-            <li class="join">가입</li>
-            <li class="logout">로그아웃</li>
-          </ul>
-        </nav>
-      </div>
-  </body>
-</html>
+<div class="header">
+  <div class="section">
+    <div class="logo">
+      <a href="/"
+        ><img src="/Image/starbucks.png" id="imagelogo" alt="logo"
+      /></a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li class="productList">음료</li>
+        <li class="cartList">장바구니</li>
+        <li class="orderList">주문목록</li>
+        <li class="login">로그인</li>
+        <li class="join">가입</li>
+        <li class="logout">로그아웃</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
