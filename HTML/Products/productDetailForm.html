@@ -68,103 +68,120 @@
       }
     </style>
   </head>
-  <body class="productDetail">
-    <header>
-      <h1 id="title">나이트로 바닐라 크림 라떼</h1>
-    </header>
+  <body>
+    <div class="productDetail">
+      <header>
+        <h1 id="title">나이트로 바닐라 크림 라떼</h1>
+      </header>
 
-    <section>
-      <div id="right">
-        <img src="/Image/drink1.png" alt="나이트로 바닐라 크림 라떼 이미지" />
-      </div>
-
-      <div id="left">
-        <div id="subtitle">
-          <h4>
-            subtitle
-            <br />
-            <span> ENG subtitle</span>
-          </h4>
-
-          <hr class="line-first" />
-
-          <p>
-            부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
-            느껴보세요! COMMENT
-          </p>
+      <section>
+        <div id="right">
+          <img src="/Image/drink1.png" alt="나이트로 바닐라 크림 라떼 이미지" />
         </div>
 
-        <hr class="line-second" />
+        <div id="left">
+          <div id="subtitle">
+            <h4>
+              {{productDetail}}
+              <br />
+              <span> ENG subtitle</span>
+            </h4>
 
-        <div id="nutrition">
-          <div id="nutrition-info">
+            <hr class="line-first" />
+
             <p>
-              제품 영양 정보 <br />
-              Tall(톨) / 355ml
+              부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
+              느껴보세요! COMMENT
             </p>
           </div>
 
           <hr class="line-second" />
 
-          <div id="nutrtion-largeset">
-            <div class="nutrition-set">
-              <div class="nutrition-block-left">1회 제공량 (kcal)</div>
-              <div class="nutrition-block-right">해당 제품 칼로리</div>
+          <div id="nutrition">
+            <div id="nutrition-info">
+              <p>
+                제품 영양 정보 <br />
+                Tall(톨) / 355ml
+              </p>
             </div>
 
-            <div class="nutrition-set">
-              <div class="nutrition-block-left">포화지방 (g)</div>
-              <div class="nutrition-block-right">해당 제품 포화지방</div>
-            </div>
+            <hr class="line-second" />
 
-            <div class="nutrition-set">
-              <div class="nutrition-block-left">단백질 (g)</div>
-              <div class="nutrition-block-right">해당 제품 단백질</div>
-            </div>
+            <div id="nutrtion-largeset">
+              <div class="nutrition-set">
+                <div class="nutrition-block-left">1회 제공량 (kcal)</div>
+                <div class="nutrition-block-right" :value=""></div>
+              </div>
 
-            <div class="nutrition-set">
-              <div class="nutrition-block-left">나트륨 (mg)</div>
-              <div class="nutrition-block-right">해당 제품 나트륨</div>
-            </div>
+              <div class="nutrition-set">
+                <div class="nutrition-block-left">포화지방 (g)</div>
+                <div class="nutrition-block-right">해당 제품 포화지방</div>
+              </div>
 
-            <div class="nutrition-set">
-              <div class="nutrition-block-left">당류 (g)</div>
-              <div class="nutrition-block-right">해당 제품 당류</div>
-            </div>
+              <div class="nutrition-set">
+                <div class="nutrition-block-left">단백질 (g)</div>
+                <div class="nutrition-block-right">해당 제품 단백질</div>
+              </div>
 
-            <div class="nutrition-set">
-              <div class="nutrition-block-left">카페인 (mg)</div>
-              <div class="nutrition-block-right">해당 제품 카페인</div>
+              <div class="nutrition-set">
+                <div class="nutrition-block-left">나트륨 (mg)</div>
+                <div class="nutrition-block-right">해당 제품 나트륨</div>
+              </div>
+
+              <div class="nutrition-set">
+                <div class="nutrition-block-left">당류 (g)</div>
+                <div class="nutrition-block-right">해당 제품 당류</div>
+              </div>
+
+              <div class="nutrition-set">
+                <div class="nutrition-block-left">카페인 (mg)</div>
+                <div class="nutrition-block-right">해당 제품 카페인</div>
+              </div>
             </div>
           </div>
+
+          <div id="allergy">알레르기 유발요인 : 우유</div>
+
+          <label for="count">
+            수량 : <input type="number" min="0" id="count"
+          /></label>
+          <input type="button" value="장바구니담기" id="cart-button" />
         </div>
+      </section>
 
-        <div id="allergy">알레르기 유발요인 : 우유</div>
+      <footer>
+        <p>
+          부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
+          느껴보세요!
+        </p>
 
-        <label for="count">
-          수량 : <input type="number" min="0" id="count"
-        /></label>
-        <input type="button" value="장바구니담기" id="cart-button" />
-      </div>
-    </section>
-
-    <footer>
-      <p>
-        부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에
-        느껴보세요!
-      </p>
-
-      <hr class="line-second" />
-    </footer>
+        <hr class="line-second" />
+      </footer>
+    </div>
   </body>
   <script type="text/javascript" src="https://unpkg.com/vue"></script>
   <script>
-    Vuecreate.App({
+    Vue.createApp({
       data() {
         return {
           productDetail: [],
         };
       },
-    }).mount();
+      async mounted() {
+        console.log(this.productDetail);
+        const prodNo = location.search.substring(1); //=> C0001
+        // query string 만 가져올 수 있는 코드
+        console.log(prodNo);
+        let url = 'http://localhost:3000/product' + prodNo;
+        console.log(url);
+        this.productDetail = await fetch(url).then((res) => {
+          return res.json();
+        });
+      },
+      // 하고자 하는 것 => url에서
+      // prodNo을 이용하여 객체의 칼로리, 나트륨과 같은 정보들을 가져와
+      // 각 항목을 채우는 것을 하고자 함.
+      // Vue를 이용하여 가져올 수 있는 방법, prodNo를 얻어낼 수 있는 방법.
+    }).mount('.productDetail');
   </script>
 </html>
