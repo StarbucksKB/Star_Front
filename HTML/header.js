@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('header').innerHTML = headerHTML;
 
       document.querySelector('#imagelogo').onclick = () => {
-        location.href = 'HTML/main.html';
+        location.href = '/HTML/main.html';
       };
       document.querySelector('.productList').onclick = () => {
         location.href = '/HTML/Products/productList.html';
